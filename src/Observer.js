@@ -34,6 +34,8 @@ export default class {
       if (!('sendObj' in this.WebSocket)) {
         this.WebSocket.sendObj = (obj) => this.WebSocket.send(JSON.stringify(obj))
       }
+    } else if (this.format === 'arraybuffer') {
+      this.WebSocket.binaryType = 'arraybuffer'
     }
 
     return this.WebSocket
